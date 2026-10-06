@@ -29,3 +29,9 @@ dim(datos)
 nrow(datos)
 ncol(datos)
 length(unique(datos$id_cliente))
+
+# Asegurarase de que no hay valores perdidos 
+# esto es para ver que no hay que eliminar observaciones por datos faltantes 
+colSums(is.na(datos))
+sum(is.na(datos))
+
