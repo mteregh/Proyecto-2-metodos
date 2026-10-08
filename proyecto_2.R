@@ -134,3 +134,5 @@ matriz_cor <- cor(variables_continuas)
 
 round(matriz_cor, 2)
 
+########### Parte 1 ###########
+
