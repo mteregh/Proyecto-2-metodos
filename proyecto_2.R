@@ -50,3 +50,17 @@ table(
   Ticket_cero = datos$ticket_promedio == 0,
   Estado_T1 = datos$estado_t1
 )
+
+### Truncamiento de dias ultima sesion ###
+
+# valor máximo observado
+max(datos$dias_ultima_sesion)
+
+# cantidad de clientes con valor igual a 180
+sum(datos$dias_ultima_sesion == 180)
+
+# proporción
+mean(datos$dias_ultima_sesion == 180)
+
+# porcentaje
+mean(datos$dias_ultima_sesion == 180) * 100
