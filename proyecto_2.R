@@ -30,8 +30,23 @@ nrow(datos)
 ncol(datos)
 length(unique(datos$id_cliente))
 
-# Asegurarase de que no hay valores perdidos 
-# esto es para ver que no hay que eliminar observaciones por datos faltantes 
+# Asegurarase de que no hay datos nulos (no me lo piden pero buena practica)
 colSums(is.na(datos))
 sum(is.na(datos))
 
+#### Ceros estructurales ####
+
+# clientes con ticket promedio igual a 0
+sum(datos$ticket_promedio == 0)
+
+# proporcion
+mean(datos$ticket_promedio == 0)
+
+# porcentaje
+mean(datos$ticket_promedio == 0) * 100
+
+# Verificar relación con estado_t1
+table(
+  Ticket_cero = datos$ticket_promedio == 0,
+  Estado_T1 = datos$estado_t1
+)
