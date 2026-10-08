@@ -136,3 +136,21 @@ round(matriz_cor, 2)
 
 ########### Parte 1 ###########
 
+# estandarización de las variables continuas
+datos_norm <- scale(variables_continuas)
+
+colMeans(datos_norm)
+apply(datos_norm, 2, sd)
+
+# matriz de distancias euclideas sobre variables estandarizadas
+dist_matriz <- dist(datos_norm, method = "euclidean")
+
+
+# COMENTAR DESPUES 
+# revisar una parte de la matriz
+# round(as.matrix(dist_matriz)[1:6, 1:6], 2)
+
+
+
+########### Parte 2 ###########
+########### Parte 3 ###########
