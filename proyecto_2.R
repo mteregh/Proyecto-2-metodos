@@ -128,3 +128,9 @@ hist(datos$pct_restaurantes,
 
 par(mfrow = c(1, 1))
 
+###### Matriz de correlacion ######
+
+matriz_cor <- cor(variables_continuas)
+
+round(matriz_cor, 2)
+
