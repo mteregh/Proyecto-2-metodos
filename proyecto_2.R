@@ -87,4 +87,17 @@ descriptivos <- data.frame(
   Maximo = sapply(variables_continuas, max)
 )
 
+# tabla de descriptivos redondeada a 2 decimales
+# media, mediana, desviación estándar, mínimo y máximo 
 round(descriptivos, 2)
+
+###### Distribucion estados ######
+
+# Frecuencias absolutas
+table(datos$estado_t1)
+table(datos$estado_t2)
+
+# Porcentajes
+round(prop.table(table(datos$estado_t1)) * 100, 2)
+round(prop.table(table(datos$estado_t2)) * 100, 2)
+
