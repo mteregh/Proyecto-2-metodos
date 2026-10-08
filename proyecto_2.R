@@ -101,3 +101,30 @@ table(datos$estado_t2)
 round(prop.table(table(datos$estado_t1)) * 100, 2)
 round(prop.table(table(datos$estado_t2)) * 100, 2)
 
+
+###### Graficos descriptivos ######
+
+par(mfrow = c(2, 2))
+
+hist(datos$dias_ultima_sesion,
+     main = "Última sesión",
+     xlab = "Días",
+     ylab = "Frecuencia")
+
+hist(datos$pedidos_12m,
+     main = "Pedidos 12 meses",
+     xlab = "Número de pedidos",
+     ylab = "Frecuencia")
+
+hist(datos$ticket_promedio,
+     main = "Ticket promedio",
+     xlab = "Miles de pesos",
+     ylab = "Frecuencia")
+
+hist(datos$pct_restaurantes,
+     main = "Gasto en restaurantes",
+     xlab = "Proporción",
+     ylab = "Frecuencia")
+
+par(mfrow = c(1, 1))
+
