@@ -2,7 +2,7 @@
 # Proyecto 2 
 # Grupo 25
 
-###### Cargar datos ######
+####### Cargar datos #######
 
 datos_completos <- read.csv("grupo_5_clientes.csv")
 
@@ -34,7 +34,7 @@ length(unique(datos$id_cliente))
 colSums(is.na(datos))
 sum(is.na(datos))
 
-#### Ceros estructurales ####
+####### Ceros estructurales #######
 
 # clientes con ticket promedio igual a 0
 sum(datos$ticket_promedio == 0)
@@ -51,7 +51,7 @@ table(
   Estado_T1 = datos$estado_t1
 )
 
-### Truncamiento de dias ultima sesion ###
+###### Truncamiento de dias ultima sesion ######
 
 # valor máximo observado
 max(datos$dias_ultima_sesion)
@@ -64,3 +64,27 @@ mean(datos$dias_ultima_sesion == 180)
 
 # porcentaje
 mean(datos$dias_ultima_sesion == 180) * 100
+
+###### Estadisticos descriptivos ######
+
+# cuatro variables continuas
+variables_continuas <- datos[, c(
+  "dias_ultima_sesion",
+  "pedidos_12m",
+  "ticket_promedio",
+  "pct_restaurantes"
+)]
+
+# mínimo, cuartiles, mediana, media y máximo
+summary(variables_continuas)
+
+# Tabla de descriptivos
+descriptivos <- data.frame(
+  Media = sapply(variables_continuas, mean),
+  Mediana = sapply(variables_continuas, median),
+  Desv_Estandar = sapply(variables_continuas, sd),
+  Minimo = sapply(variables_continuas, min),
+  Maximo = sapply(variables_continuas, max)
+)
+
+round(descriptivos, 2)
